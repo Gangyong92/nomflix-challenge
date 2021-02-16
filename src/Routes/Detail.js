@@ -224,17 +224,22 @@ const Detail = (props) => {
                     : `${genre.name} / `
                 )}
             </Item>
-            <Divider>•</Divider>
-            <ExternalLink
-              target="_blank"
-              href={`https://imdb.com/title/${result.imdb_id}`}
-            >
-              <BtnCover
-                bgImage={
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/220px-IMDB_Logo_2016.svg.png"
-                }
-              />
-            </ExternalLink>
+
+            {result.imdb_id && (
+              <>
+                <Divider>•</Divider>
+                <ExternalLink
+                  target="_blank"
+                  href={`https://imdb.com/title/${result.imdb_id}`}
+                >
+                  <BtnCover
+                    bgImage={
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/220px-IMDB_Logo_2016.svg.png"
+                    }
+                  />
+                </ExternalLink>
+              </>
+            )}
           </ItemContainer>
           <Overview>{result.overview}</Overview>
           <LinkList>
