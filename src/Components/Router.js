@@ -1,18 +1,13 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import Home from "Routes/Home";
 import TV from "Routes/TV";
 import Search from "Routes/Search";
 import Header from "Components/Header";
 import Detail from "Routes/Detail";
 
-export default () => (
-  <Router>
+const Router = () => (
+  <BrowserRouter>
     <Header />
     <Switch>
       <Route path="/" exact component={Home} />
@@ -22,5 +17,7 @@ export default () => (
       <Route path="/show/:id" component={Detail} />
       <Redirect from="*" to="/" />
     </Switch>
-  </Router>
+  </BrowserRouter>
 );
+
+export default Router;

@@ -29,10 +29,10 @@ const ImageContainer = styled.div`
   position: relative;
   &:hover {
     ${Image} {
-      opacity 0.3;
+      opacity: 0.3;
     }
     ${Rating} {
-      opacity 1;
+      opacity: 1;
     }
   }
 `;
